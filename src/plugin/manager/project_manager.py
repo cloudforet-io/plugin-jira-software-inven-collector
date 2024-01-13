@@ -33,6 +33,9 @@ class ProjectManager(JiraBaseManager):
             )
 
     def collect_cloud_service_type(self, options, secret_data, schema):
+        tags = {
+            "spaceone:icon": "https://spaceone-custom-assets.s3.ap-northeast-2.amazonaws.com/console-assets/icons/jira-icon.png"
+        }
         cloud_service_type = make_cloud_service_type(
             name=self.cloud_service_type,
             group=self.cloud_service_group,
@@ -40,6 +43,7 @@ class ProjectManager(JiraBaseManager):
             metadata_path=self.metadata_path,
             is_primary=True,
             is_major=True,
+            tags=tags,
         )
 
         yield make_response(
