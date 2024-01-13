@@ -1,0 +1,22 @@
+---
+search:
+  fields:
+    - Key: data.key
+    - Private: data.IsPrivate
+    - Id: data.id
+    - Project type: data.projectTypeKey
+    - Issue count: data.display_total_issue_count
+    - Issue type count: data.display_issue_type_count
+
+
+
+table:
+  sort:
+    key: data.name
+    desc: true
+  fields:
+    - Key: data.key
+    - Private: data.IsPrivate
+    - Id: data.id
+    - Project Type: data.projectTypeKey
+    - Issue count: data.display_total_issue_count
