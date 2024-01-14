@@ -1,8 +1,9 @@
 ---
 search:
   fields:
+    - Lead: data.lead.displayName
     - Key: data.key
-    - Private: data.IsPrivate
+    - Private: data.isPrivate
     - Id: data.id
     - Project type: data.projectTypeKey
     - Issue count: data.display_total_issue_count
@@ -15,8 +16,10 @@ table:
     key: data.name
     desc: true
   fields:
+    - Lead: data.lead.displayName
     - Key: data.key
     - Private: data.IsPrivate
     - Id: data.id
     - Project Type: data.projectTypeKey
     - Issue count: data.display_total_issue_count
+

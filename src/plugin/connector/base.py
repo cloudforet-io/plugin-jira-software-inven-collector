@@ -63,6 +63,11 @@ class JiraBaseConnector(BaseConnector):
                 f"[dispatch_request] {url} {response.status_code} {response.reason}, {response_json.get('total')}"
             )
 
+            if response.status_code != 200:
+                raise ERROR_UNKNOWN(
+                    message=f"Error {response.status_code} {response.text}"
+                )
+
             if response_values:
                 responses.extend(response_values)
             else:
