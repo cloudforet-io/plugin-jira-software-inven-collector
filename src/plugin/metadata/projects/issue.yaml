@@ -1,10 +1,9 @@
 ---
 search:
   fields:
-    - Summary: data.fields.summary
     - Key: data.key
     - Status: data.fields.status.name
-    - Project name: data.fields.project.name
+    - Jira Project name: data.fields.project.name
     - Assignee: data.fields.assignee.displayName
     - Issue type: data.fields.issuetype.name
     - Priority: data.fields.priority.name
@@ -22,8 +21,6 @@ table:
     key: data.name
     desc: true
   fields:
-    - Summary: data.fields.summary
-    - Key: data.key
     - Status: data.fields.status.name
     - Project name: data.fields.project.name
     - Assignee: data.fields.assignee.displayName
@@ -37,4 +34,5 @@ table:
     - Creator: data.fields.creator.displayName
     - Reporter: data.fields.reporter.displayName
     - Watcher count: data.fields.watches.watchCount
+    - Key: data.key
 
