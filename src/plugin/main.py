@@ -3,6 +3,7 @@ import logging
 from spaceone.core.service import *
 from spaceone.core.error import ERROR_REQUIRED_PARAMETER
 from spaceone.inventory.plugin.collector.lib.server import CollectorPluginServer
+from plugin.connector.server_info_connector import ServerInfoConnector
 
 from plugin.manager.base import JiraBaseManager
 

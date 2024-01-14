@@ -12,6 +12,7 @@ class JiraBaseManager(BaseManager):
     cloud_service_group = None
     cloud_service_type = None
     region_name = None
+    metadata_path = None
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

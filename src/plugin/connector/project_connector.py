@@ -1,5 +1,4 @@
 import logging
-from typing import Generator
 
 from plugin.connector.base import JiraBaseConnector
 
@@ -14,7 +13,7 @@ class ProjectConnector(JiraBaseConnector):
 
     def get_projects(self, secret_data: dict) -> list:
         params = {
-            "maxResults": 3,
+            "maxResults": 100,
         }
 
         return self.dispatch_request(
@@ -42,46 +41,3 @@ class ProjectConnector(JiraBaseConnector):
         )
 
         return next(responses).get("total", 0)
-
-    def search_issue(
-        self,
-        secret_data: dict,
-        project_name: str,
-    ) -> list:
-        params = {
-            "jql": f"project = '{project_name}'",
-            "startAt": 0,
-            "maxResults": 1,
-            "fields": [
-                "description",
-                "summary",
-                "comment",
-                "created",
-                "creator",
-                "assignee",
-                "duedate",
-                "issuelinks",
-                "issuetype",
-                "labels",
-                "lastViewed",
-                "priority",
-                "progress",
-                "project",
-                "reporter",
-                "resolution",
-                "resolutiondate",
-                "status",
-                "statuscategorychangedate",
-                "subtasks",
-                "updated",
-                "watches",
-            ],
-        }
-        request_url = "rest/api/3/search"
-        _LOGGER.debug(f"[search_issue] {request_url}")
-
-        responses = self.dispatch_request(
-            "GET", request_url, secret_data, params=params
-        )
-
-        return responses
