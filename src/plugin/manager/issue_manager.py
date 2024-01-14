@@ -44,7 +44,7 @@ class IssueManager(JiraBaseManager):
             provider=self.provider,
             metadata_path=self.metadata_path,
             is_primary=True,
-            is_major=True,
+            is_major=False,
             tags=tags,
         )
 
